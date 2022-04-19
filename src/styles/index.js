@@ -112,10 +112,6 @@ export const Section = styled.section`
     background-image: url(${bgImg});
     background-size: cover;
     `}
-
-    @media screen and (max-width: ${BREAK_POINTS.MOBILE}) {
-        touch-action: pan-x;
-    }
 `;
 
 const title = ({ mt = false, mb = 1, fs, fw, fsPhone, fs320 }) => {

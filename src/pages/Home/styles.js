@@ -42,11 +42,9 @@ export const HomeSection = styled.section`
 
 export const HomeArticle = styled.article`
     border-radius: 2rem;
-    /* background: ${COLORS.WHITE}; */
+    background: ${COLORS.WHITE};
 
-    box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.37);
-    -webkit-box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.37);
-    -moz-box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.37);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
     padding: 2rem 1rem 0.5rem;
 `;
 

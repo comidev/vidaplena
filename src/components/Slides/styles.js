@@ -9,7 +9,6 @@ export const SlidesViewport = styled.section`
 
 export const SlidesContainer = styled.div`
     display: flex;
-    touch-action: pan-x;
 
     ${({ width }) => `width: ${width * 100}vw;`}
     height: 30rem;
@@ -51,6 +50,7 @@ export const SlideInfo = styled.div`
     margin: auto;
     padding: 0 1.5rem;
     max-width: ${MAX_WIDTH.LG};
+    user-select: none;
 
     @media screen and (max-width: ${BREAK_POINTS.DESKTOP}) {
         max-width: ${MAX_WIDTH.MD};
@@ -93,6 +93,7 @@ export const SlideInfoText = styled.p`
     margin-top: 2rem;
     line-height: 1.7rem;
     font-size: 1.3rem;
+
 
     @media screen and (max-width: 320px) {
         margin-top: 0.5rem;

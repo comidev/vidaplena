@@ -24,6 +24,7 @@ const HomeContainer = ({ children, bgImg }) => {
 };
 
 export default function Home() {
+
     return (
         <>
             <CEO

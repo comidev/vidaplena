@@ -6,7 +6,7 @@ export const ProductoCardStyle = styled.article`
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.21);
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.21);
     -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.21);
-    background-color: ${COLORS.BG1};
+    background-color: ${COLORS.WHITE};
     margin: auto;
     padding: 1rem;
 
@@ -21,17 +21,17 @@ export const ProductoCardStyle = styled.article`
 export const ProductoDetalles = styled.div`
     position: relative;
 
+    transition: transform ease 0.3s;
+
     @media (hover: hover) {
         &:hover {
-            transform: scale(102%);
-            background-color: ${COLORS.GRIS};
+            transform: scale(105%);
         }
     }
 
     @media screen and (max-width: 1024px) {
         &:active {
-            transform: scale(102%);
-            background-color: ${COLORS.GRIS};
+            transform: scale(105%);
         }
     }
 `;
@@ -177,7 +177,7 @@ export const ProductoPageStyle = styled.article`
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 2rem;
-    background-color: ${COLORS.BG1};
+    background-color: ${COLORS.WHITE};
 
     @media screen and (max-width: 900px) {
         grid-template-columns: 1fr;

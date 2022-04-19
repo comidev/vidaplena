@@ -74,6 +74,8 @@ const pregunta = `
     height: 0;
     margin-bottom: 2rem;
 
+    user-select: none;
+
     &::before {
         content: "";
         background-color: ${COLORS.TEXT};
@@ -130,6 +132,7 @@ const pregunta = `
 export const AvisoFueraDePeru = styled.div`
     ${pregunta}
     width: 8.75rem;
+
     &::after {
         content: 'Descuida, puede adquirirlo de manera online, seleccione los productos que desee y dé click en "Comprar", por interno le diré cómo llegarán los productos hacia su hogar.';
         height: 9rem;

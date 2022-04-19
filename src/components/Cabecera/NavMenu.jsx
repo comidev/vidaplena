@@ -13,7 +13,7 @@ export default function NavMenu() {
 
     return (
         <>
-            <MenuLinkList move={isOpen ? "0" : "-20rem"}>
+            <MenuLinkList move={isOpen ? "0.5rem" : "-20rem"}>
                 {PAGES.map((pag, index) => (
                     <MenuLink
                         to={pag.to}

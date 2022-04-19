@@ -69,5 +69,5 @@ export const ListaItem = styled.li`
     text-align: center;
     color: ${COLORS.WHITE};
     background: ${COLORS.BG2};
-    box-shadow: 0px 2px 10px #222222;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
 `;

@@ -56,10 +56,11 @@ export const MenuLinkList = styled.ul`
     display: flex;
     justify-content: space-around;
     align-items: center;
+
     @media screen and (max-width: ${BREAK_POINTS.MOBILE}) {
         position: fixed;
         left: ${({ move }) => move};
-        top: 4rem;
+        top: 4.5rem;
 
         min-width: 16.5rem;
         width: max-content;
@@ -70,7 +71,8 @@ export const MenuLinkList = styled.ul`
 
         flex-direction: column;
 
-        border-radius: 0 0 2rem 0;
+        border-radius: 1rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         background-color: ${COLORS.BG3};
 
         overflow: auto;

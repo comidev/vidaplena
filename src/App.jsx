@@ -11,7 +11,7 @@ const AppStyle = styled.div`
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: ${COLORS.WHITE};
+    background: ${COLORS.BG1};
 `;
 
 function App() {
