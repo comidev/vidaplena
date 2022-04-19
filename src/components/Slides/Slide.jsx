@@ -6,13 +6,18 @@ import {
     SlideInfoText,
     SlideButtonContainer,
     SlideInfoTitle,
+    SlideImageContainer,
+    SlideImage,
 } from "./styles";
 
 import { ButtonR } from "components/Buttons";
 
 export default function Slide({ bgImg, title, text, to, button }) {
     return (
-        <SlideContainer bgImg={bgImg}>
+        <SlideContainer>
+            <SlideImageContainer>
+                <SlideImage src={bgImg} />
+            </SlideImageContainer>
             <SlideBackStyle>
                 <SlideInfo>
                     <SlideInfoTitle>

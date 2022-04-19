@@ -5,13 +5,15 @@ import { COLORS, MAX_WIDTH, BREAK_POINTS } from "styles";
 export const SlidesViewport = styled.section`
     position: relative;
     overflow: hidden;
+    touch-action: pan-y;
 `;
 
 export const SlidesContainer = styled.div`
     display: flex;
 
     ${({ width }) => `width: ${width * 100}vw;`}
-    height: 30rem;
+    height: 36em;
+    max-height: calc(100vh - 4rem);
 
     transform: translateX(-100vw);
     transition: transform 0ms ease;
@@ -31,6 +33,20 @@ export const SlideContainer = styled.article`
     background-image: url(${({ bgImg }) => bgImg});
     background-size: cover;
     width: 100vw;
+`;
+
+export const SlideImageContainer = styled.div`
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100%;
+`;
+
+export const SlideImage = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 `;
 
 export const SlideBackStyle = styled.div`
@@ -93,7 +109,6 @@ export const SlideInfoText = styled.p`
     margin-top: 2rem;
     line-height: 1.7rem;
     font-size: 1.3rem;
-
 
     @media screen and (max-width: 320px) {
         margin-top: 0.5rem;

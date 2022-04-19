@@ -24,7 +24,7 @@ const HomeContainer = ({ children, bgImg }) => {
 };
 
 export default function Home() {
-
+    const isMobile = window.innerWidth <= 991;
     return (
         <>
             <CEO
@@ -38,7 +38,7 @@ export default function Home() {
             <Slides>
                 {DATA_SLIDE.map((item, index) => (
                     <Slide
-                        bgImg={item.img}
+                        bgImg={isMobile ? item.img2 : item.img}
                         title={item.title}
                         text={item.text}
                         to={item.to}

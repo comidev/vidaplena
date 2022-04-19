@@ -5,12 +5,16 @@ import { FaShoppingCart, FaUser, FaPhoneVolume } from "react-icons/fa";
 import { RiVipDiamondFill } from "react-icons/ri";
 
 import productosImg from "images/perfil/slideProducto.webp";
+import productosImg2 from "images/perfil/slideProducto2.webp";
 import negocioImg from "images/perfil/slideNegocio.webp";
+import negocioImg2 from "images/perfil/slideNegocio2.webp";
 import sobreMiImg from "images/perfil/slideAbout.webp";
+import sobreMiImg2 from "images/perfil/slideAbout2.webp";
 
 export const DATA_SLIDE = [
     {
         img: sobreMiImg,
+        img2: sobreMiImg2,
         title: "¡Bienvenido!",
         button: "Seguir leyendo",
         text: "Hola, soy Washington Miranda. Hace 11 años atrás tenía estrés crónico, depresión, ansiedad, insomnio, dolores de cabeza, mareos, calambres, tics nervioso, tuve parálisis facial de media cara (derrame facial). Tomé diversos tratamientos alternativos naturistas, hiervas ...",
@@ -18,6 +22,7 @@ export const DATA_SLIDE = [
     },
     {
         img: productosImg,
+        img2: productosImg2,
         title: "Productos",
         button: "Ver productos",
         text: "Conoce nuestros productos y haga sus pedidos. Recibirá mi asesoría para aprovechar mejor los nutrientes. ¡Además, puede obtener un descuento de 20% o hasta un 40%! Hacemos entrega en Lima y envíos a todo Perú. ¿No estás en Perú? Descuida, puedes hacer la compra online desde tu país",
@@ -25,6 +30,7 @@ export const DATA_SLIDE = [
     },
     {
         img: negocioImg,
+        img2: negocioImg2,
         title: "Negocio",
         button: "Ver negocio",
         text: "Te invito a este negocio en donde ganarás diversos bonos de dinero en efectivo, artículos tecnológicos (iPad, Proyector, etc.), viajes y el último y más impactante fue a Dubai por 10 días todos los gastos pagado por esta gran compañía ¡Y este año 2022 viajamos a Egipto!",
