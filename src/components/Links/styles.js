@@ -1,20 +1,26 @@
 import styled from "@emotion/styled";
 import { Link as LinkRouter } from "react-router-dom";
+import { COLORS } from "styles";
 
 export const LinkRStyle = styled(LinkRouter)`
     display: flex;
     align-items: center;
 
     font-weight: 501;
-    margin: 0.5rem 0;
     color: ${({ color }) => color};
+
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    margin: 0.2rem 0;
+    background-color: ${COLORS.WHITE}22;
+    background-position: center;
+    background-size: 10rem 10rem;
 
     transition: transform ease 0.3s;
 
     @media (hover: hover) {
         &:hover {
-            transform: scale(105%);
-            ${({ hover }) => hover && `color: ${hover};`}
+            background-color: ${COLORS.WHITE}33;
         }
     }
 
@@ -27,8 +33,6 @@ export const LinkRStyle = styled(LinkRouter)`
         `}
 
         &:active {
-            transform: scale(105%);
-            border-width: 4px;
             ${({ hover }) => hover && `color: ${hover};`}
         }
     }

@@ -17,18 +17,6 @@ export function ButtonR({ text, to }) {
     return <ButtonRStyle to={to}>{text}</ButtonRStyle>;
 }
 
-export function ButtonFacebook({ text, mb }) {
-    return (
-        <ButtonLink
-            mb={mb}
-            href={RRSS[2].src}
-            bg={RRSS[2].bg}
-            bgRgb={RRSS[2].bgRgb}
-            target="_blank">
-            {text}
-        </ButtonLink>
-    );
-}
 export function ButtonMessenger({ text, mb }) {
     return (
         <ButtonLink
@@ -49,6 +37,19 @@ export function ButtonWhatsapp({ text, msg, mr, mb }) {
             bg={RRSS[0].bg}
             bgRgb={RRSS[0].bgRgb}
             mr={mr}
+            target="_blank">
+            {text}
+        </ButtonLink>
+    );
+}
+
+export function ButtonFacebook({ text, mb }) {
+    return (
+        <ButtonLink
+            mb={mb}
+            href={RRSS[2].src}
+            bg={RRSS[2].bg}
+            bgRgb={RRSS[2].bgRgb}
             target="_blank">
             {text}
         </ButtonLink>

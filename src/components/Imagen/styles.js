@@ -10,9 +10,7 @@ export const ImgContainer = styled.div`
     ${({ box }) =>
         box &&
         `
-    box-shadow: 0px 0px 9px 1px rgba(0,0,0,0.51);
-    -webkit-box-shadow: 0px 0px 9px 1px rgba(0,0,0,0.51);
-    -moz-box-shadow: 0px 0px 9px 1px rgba(0,0,0,0.51);
+         box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     `}
     margin: 0 auto;
 `;

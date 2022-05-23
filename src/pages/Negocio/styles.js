@@ -15,6 +15,7 @@ export const NegocioBody = styled.div`
 `;
 
 export const NegocioInfo = styled.section`
+    padding: 0 1rem;
     @media screen and (max-width: ${BREAK_POINTS.MOBILE}) {
         grid-row-end: -1;
     }
@@ -42,20 +43,8 @@ export const Lista = styled.ul`
     display: grid;
     max-width: 50rem;
     margin: 0 auto;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     gap: 1rem;
-
-    @media screen and (max-width: ${BREAK_POINTS.MOBILE}) {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    @media screen and (max-width: 600px) {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media screen and (max-width: 420px) {
-        grid-template-columns: repeat(1, 1fr);
-    }
 `;
 
 export const ListaItem = styled.li`
@@ -69,5 +58,5 @@ export const ListaItem = styled.li`
     text-align: center;
     color: ${COLORS.WHITE};
     background: ${COLORS.BG2};
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 `;

@@ -112,6 +112,7 @@ export default function Home() {
                             src={imgHome}
                             radius="0.8rem"
                             maxWidth="25rem"
+                            box="si"
                             alt="Imagen de inicio"
                         />
                     </HomeBody>

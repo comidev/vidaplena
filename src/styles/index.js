@@ -10,7 +10,7 @@ export const COLORS = {
     WHITE: "#ffffff",
     GRIS: "#f9f6f6",
     BLACK: "#000000",
-    BLUE: "#48e",
+    BLUE: "#09F",
 
     TEXT: "#666666",
     TEXT2: "#E0E0E0",
@@ -92,6 +92,9 @@ export const Container = styled.div`
     @media screen and (max-width: ${BREAK_POINTS.MOBILE}) {
         max-width: ${MAX_WIDTH.SM};
     }
+    @media screen and (max-width: 551px) {
+        padding: 3rem 0.5rem 0;
+    }
 `;
 
 export const Main = styled.main`
@@ -136,7 +139,7 @@ const title = ({ mt = false, mb = 1, fs, fw, fsPhone, fs320 }) => {
 export const H1 = styled.h1`
     ${title({ mt: true, mb: 4, fs: 3.5, fsPhone: 3.2, fs320: 2.8 })}
     font-weight: 800;
-    font-size: calc(1.25vw + 1.25vh + 1.8rem);
+    font-size: calc(2vw + 2vh + 1.8rem);
     ${({ start }) => start && `text-align: start;`}
     ${({ maxwidth }) => maxwidth && `max-width: ${maxwidth};`}
     margin-top: 1.5rem;

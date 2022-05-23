@@ -15,7 +15,9 @@ export const AboutBody = styled.div`
 
 export const Imagenes = styled.div`
     display: grid;
-    gap: 1rem;
+    max-width: max-content;
+    margin: 0 auto;
+    gap: 0.5rem;
 
     @media screen and (max-width: 1024px) {
         grid-template-columns: 1fr 1fr;
@@ -29,10 +31,11 @@ export const Imagenes = styled.div`
 `;
 
 export const AboutInfo = styled.section`
-    margin-left: auto;
-    /* max-width: 35rem; */
+    padding: 0 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 
     @media screen and (max-width: 1024px) {
+        padding: 0 1rem;
         max-width: 40rem;
         margin: auto;
     }

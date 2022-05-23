@@ -69,12 +69,14 @@ export default function About() {
                     <Imagen
                         src={about01}
                         alt={"Img About"}
+                        box="si"
                         radius="0.4rem"
                         maxWidth="25rem"
                     />
                     <Imagen
                         src={about02}
                         alt={"Img About"}
+                        box="si"
                         radius="0.4rem"
                         maxWidth="25rem"
                     />

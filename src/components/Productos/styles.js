@@ -3,9 +3,7 @@ import { Link as LinkRouter } from "react-router-dom";
 import { COLORS, BREAK_POINTS } from "styles";
 
 export const ProductoCardStyle = styled.article`
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.21);
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.21);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.21);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.08);
     background-color: ${COLORS.WHITE};
     margin: auto;
     padding: 1rem;
@@ -170,9 +168,7 @@ export const ButtonComprar = styled.button`
 // PAGE
 
 export const ProductoPageStyle = styled.article`
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.21);
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.21);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.21);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 
     display: grid;
     grid-template-columns: 1fr 1fr;

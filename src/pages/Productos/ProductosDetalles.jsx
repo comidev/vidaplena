@@ -29,6 +29,8 @@ export default function ProductosDetalles() {
                 categorys={producto.categorys}
                 description={producto.description}
                 price={producto.price}
+                type={producto.type}
+                id={producto.id}
             />
         </>
     );

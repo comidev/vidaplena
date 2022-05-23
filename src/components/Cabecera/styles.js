@@ -54,7 +54,7 @@ export const NavMenuContainer = styled.div``;
 
 export const MenuLinkList = styled.ul`
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 
     @media screen and (max-width: ${BREAK_POINTS.MOBILE}) {
@@ -66,7 +66,7 @@ export const MenuLinkList = styled.ul`
         width: max-content;
 
         min-height: 6rem;
-        height: calc(100vh - 4.5rem);
+        height: calc(100vh - 5rem);
         max-height: 480px;
 
         flex-direction: column;
@@ -81,41 +81,29 @@ export const MenuLinkList = styled.ul`
 `;
 
 export const NavLi = styled.li`
-    margin-left: 1rem;
-
     @media screen and (max-width: ${BREAK_POINTS.MOBILE}) {
-        display: grid;
-        margin: 0 auto;
-        height: 5rem;
-        width: 90%;
+        width: 100%;
+        height: 25%;
     }
 `;
 
 export const Link = styled(NavLink)`
     display: flex;
     align-items: center;
-    /* gap: 0.5rem; */
-
     font-weight: 501;
-    margin: auto 0;
-    padding: 0.5rem 0;
+    padding: 0.5rem 0.8rem;
+
+    border-radius: 9999px;
+
+    background-position: center;
+    background-size: 10rem 10rem;
     color: ${COLORS.WHITE};
 
-    transition: transform ease 0.3s;
-
-    @media (hover: hover) {
-        &:hover {
-            transform: scale(105%);
-        }
-    }
-
-    &:active {
-        transform: scale(105%);
-    }
-
     @media screen and (max-width: ${BREAK_POINTS.MOBILE}) {
+        border-radius: 0;
         font-size: 1.5rem;
-        padding: 0.5rem 2rem;
+        padding-left: 2rem;
+        height: 100%;
     }
 `;
 

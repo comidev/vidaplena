@@ -2,8 +2,8 @@ import { useContext } from "react";
 import ShoppingContext from "context/ShoppingContext";
 
 export default function useGlobalShopping() {
-    const { listaCompras, agregarProducto, datosVenta, eliminarProducto } =
+    const { listaCompras, guardarProducto, eliminarProducto } =
         useContext(ShoppingContext);
 
-    return { listaCompras, agregarProducto, datosVenta, eliminarProducto };
+    return { listaCompras, guardarProducto, eliminarProducto };
 }

@@ -4,8 +4,11 @@ import {
     BolitasContainer,
     Bolitas,
     Bolita,
+    ArrowsLeftContainer,
+    ArrowsRightContainer,
 } from "./styles";
 import useSlides from "../../hooks/useSlides";
+import { ArrowLeft, ArrowRight } from "components/Buttons/Arrows";
 
 export default function SlidesModel({ children }) {
     return (
@@ -25,6 +28,8 @@ function Slides({ children }) {
         saveStartPoint,
         saveEndPointAndMove,
         setFinalMove,
+        moveLeft,
+        moveRight,
     } = useSlides(SIZE);
     const botones = [...Array(SIZE).keys()];
 
@@ -44,8 +49,6 @@ function Slides({ children }) {
     return (
         <>
             <SlidesContainer
-                width={SIZE + 2}
-                ref={slideContainer}
                 onTransitionEnd={handleTransitionEnd}
                 onMouseDown={handleMouseDown}
                 onMouseMove={handleMouseMove}
@@ -53,7 +56,9 @@ function Slides({ children }) {
                 onMouseLeave={handleMouseLeave}
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
-                onTouchEnd={handleTouchEnd}>
+                onTouchEnd={handleTouchEnd}
+                width={SIZE + 2}
+                ref={slideContainer}>
                 {children[SIZE - 1]}
                 {children}
                 {children[0]}

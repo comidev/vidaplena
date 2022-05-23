@@ -1,48 +1,60 @@
-import { createContext, useState } from "react";
+import { createContext, useReducer } from "react";
 
 const Contexto = createContext({});
 
+const ACTIONS = {
+    ADD: "agregar producto",
+    UPDATE: "actualizar lista",
+    DELETE: "eliminar producto",
+};
+
+const reducer = (listaCompras, action) => {
+    if (action.type === ACTIONS.ADD) {
+        listaCompras.push(action.payload.producto);
+    } else if (action.type === ACTIONS.UPDATE) {
+        const indexUpdate = action.payload.index;
+        listaCompras[indexUpdate].cantidad = action.payload.cantidad;
+    } else if (action.type === ACTIONS.DELETE) {
+        listaCompras.splice(action.payload.index, 1);
+    }
+    return [...listaCompras];
+};
+
 export function ShoppingContextProvider({ children }) {
-    const [listaCompras, setListaCompras] = useState([]);
-    const [datosVenta, setDatosVenta] = useState({
-        cantidadCompras: 0,
-        precioTotal: 0,
-    });
+    const [listaCompras, dispatch] = useReducer(reducer, []);
 
-    const updateShopping = () => {
-        setListaCompras(listaCompras);
-        let cantidadCompras = 0;
-        let precioTotal = 0;
-        listaCompras.forEach((item) => {
-            cantidadCompras += item.cantidad;
-            precioTotal += item.cantidad * item.price;
-        });
-        setDatosVenta({ cantidadCompras, precioTotal });
-    };
-
-    const agregarProducto = (producto) => {
-        const areEqual = (item) =>
-            item.productName === producto.productName &&
-            item.content === producto.content &&
-            item.type === producto.type;
-
-        const existeProducto = listaCompras.find(areEqual);
-
-        existeProducto
-            ? (existeProducto.cantidad = producto.cantidad)
-            : listaCompras.push(producto);
-
-        updateShopping();
+    const guardarProducto = (producto) => {
+        const existsProduct = listaCompras.find((item) => item.id === producto.id);
+        if (existsProduct) {
+            // Actualizar
+            const index = listaCompras.indexOf(existsProduct);
+            dispatch({
+                type: ACTIONS.UPDATE,
+                payload: { index, cantidad: producto.cantidad },
+            });
+        } else {
+            // Agregar
+            dispatch({
+                type: ACTIONS.ADD,
+                payload: { producto },
+            });
+        }
     };
 
     const eliminarProducto = (index) => {
-        listaCompras.splice(index, 1);
-        updateShopping();
+        dispatch({
+            type: ACTIONS.DELETE,
+            payload: { index },
+        });
     };
 
     return (
         <Contexto.Provider
-            value={{ listaCompras, agregarProducto, datosVenta, eliminarProducto }}>
+            value={{
+                listaCompras,
+                guardarProducto,
+                eliminarProducto,
+            }}>
             {children}
         </Contexto.Provider>
     );

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { COLORS } from "styles";
 import { IconShop, CantidadNotificacion, Shopping, ListaResultados } from "./styles";
@@ -6,11 +6,27 @@ import useGlobalShopping from "hooks/useGlobalShopping";
 import ButtonBuy from "./ButtonBuy";
 import ListaContent from "./ListaContent";
 import ListaCabecera from "./ListaCabecera";
+import { useSelector } from "react-redux";
 
 export default function ShoppingMenu() {
-    const { listaCompras, datosVenta } = useGlobalShopping();
+    const listaCompras = useSelector((state) => state.listaCompras);
+
     const [showListShopping, setShowListShopping] = useState(false);
+    const [datosVenta, setDatosVenta] = useState({
+        cantidadCompras: 0,
+        precioTotal: 0,
+    });
     const handleClickShowList = () => setShowListShopping(!showListShopping);
+
+    useEffect(() => {
+        let cantidadCompras = 0;
+        let precioTotal = 0;
+        listaCompras.forEach((item) => {
+            cantidadCompras += item.cantidad;
+            precioTotal += item.cantidad * item.price;
+        });
+        setDatosVenta({ cantidadCompras, precioTotal });
+    }, [listaCompras]);
 
     const mensaje = `Buen día, señor Washington Miranda. Me gustaría adquirir los siguientes productos: ${listaCompras
         .map(

@@ -22,7 +22,7 @@ export default function useSlides(SIZE) {
         }
     };
 
-    const moveLeft = useCallback(
+    const positionLeft = useCallback(
         (prev) => {
             const nuevo = prev - 1;
             desplazar(nuevo);
@@ -31,7 +31,7 @@ export default function useSlides(SIZE) {
         [SIZE]
     );
 
-    const moveRight = useCallback(
+    const positionRight = useCallback(
         (prev) => {
             const nuevo = prev + 1;
             desplazar(nuevo);
@@ -40,19 +40,27 @@ export default function useSlides(SIZE) {
         [SIZE]
     );
 
+    const moveRight = () => {
+        setPosicion(positionRight);
+    };
+
+    const moveLeft = () => {
+        setPosicion(positionLeft);
+    };
+
     useEffect(() => {
         const autoPlay = () =>
             setPosicion((prev) => {
                 if (!pressed) {
                     transitionTime(250);
-                    return moveRight(prev);
+                    return positionRight(prev);
                 } else {
                     return prev;
                 }
             });
         const intervalo = setInterval(autoPlay, 7000);
         return () => clearInterval(intervalo);
-    }, [SIZE, moveRight]);
+    }, [SIZE, positionRight]);
 
     const movePosition = (posicion) =>
         setPosicion(() => {
@@ -82,9 +90,9 @@ export default function useSlides(SIZE) {
             setPress(false);
             transitionTime(250);
             desplazamiento < -75
-                ? setPosicion(moveLeft)
+                ? setPosicion(positionLeft)
                 : desplazamiento > 75
-                ? setPosicion(moveRight)
+                ? setPosicion(positionRight)
                 : desplazar(posicion);
             desplazamiento = 0;
         }
@@ -100,5 +108,7 @@ export default function useSlides(SIZE) {
         saveStartPoint,
         saveEndPointAndMove,
         setFinalMove,
+        moveRight,
+        moveLeft,
     };
 }

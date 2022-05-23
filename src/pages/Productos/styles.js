@@ -55,5 +55,10 @@ export const Keywords = styled.button`
 /* ---- CERTIFICACIONES ------------------- */
 
 export const CertificacionesContainer = styled.div`
+    margin: 0 auto;
     margin-top: 4rem;
+    max-width: max-content;
+    padding: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
 `;

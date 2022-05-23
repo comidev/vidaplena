@@ -5,7 +5,7 @@ export const HomeTitle = styled.h1`
     text-align: center;
     margin-top: 2rem;
     font-weight: 800;
-    font-size: calc(1.25vw + 1.25vh + 1.8rem);
+    font-size: calc(2vw + 2vh + 1.8rem);
 
     @media screen and (max-width: 600px) {
         font-size: 3.2rem;
@@ -44,7 +44,7 @@ export const HomeArticle = styled.article`
     border-radius: 2rem;
     background: ${COLORS.WHITE};
 
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.08);
     padding: 2rem 1rem 0.5rem;
 `;
 

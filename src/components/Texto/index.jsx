@@ -8,6 +8,10 @@ export const P = styled.p`
     font-size: ${({ fontSize }) => fontSize || "20px"};
     line-height: ${({ lineHeight }) => lineHeight || "1.7rem"};
     ${({ center }) => center && `text-align: center`};
+
+    @media screen and (max-width: 991px) {
+        font-size: 16px;
+    }
 `;
 
 export default function index({

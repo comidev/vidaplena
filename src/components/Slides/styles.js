@@ -64,7 +64,7 @@ export const SlideBackStyle = styled.div`
 export const SlideInfo = styled.div`
     color: ${COLORS.WHITE};
     margin: auto;
-    padding: 0 1.5rem;
+    padding: 0 3rem;
     max-width: ${MAX_WIDTH.LG};
     user-select: none;
 
@@ -76,7 +76,7 @@ export const SlideInfo = styled.div`
     }
 
     @media screen and (max-width: 360px) {
-        margin: 1rem auto 0;
+        padding: 0 1.5rem;
     }
 `;
 
@@ -109,6 +109,10 @@ export const SlideInfoText = styled.p`
     margin-top: 2rem;
     line-height: 1.7rem;
     font-size: 1.3rem;
+
+    @media screen and (max-width: 450px) {
+        font-size: 1rem;
+    }
 
     @media screen and (max-width: 320px) {
         margin-top: 0.5rem;
@@ -193,4 +197,27 @@ export const Bolita = styled.button`
     &:active {
         background-color: #fff;
     }
+`;
+
+/* --------- FLECHAS -------------- */
+
+const ARROW = `
+    position: absolute;
+    top: 45%;
+    max-width: max-content;
+    padding: 0.3rem;
+    height: 4rem;
+
+    @media screen and (max-width: 991px) {
+        height: 2.5rem;
+    }
+`;
+
+export const ArrowsLeftContainer = styled.div`
+    ${ARROW}
+`;
+
+export const ArrowsRightContainer = styled.div`
+    ${ARROW}
+    right: 0;
 `;

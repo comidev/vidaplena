@@ -6,13 +6,17 @@ import useCounter from "hooks/useCounter";
 import Contador from "components/Contador";
 import ProductoCardInfo from "./ProductoCardInfo";
 
+import { saveProduct } from "redux/listaComprasSlice";
+import { useDispatch } from "react-redux";
+
 function ProductoCard({ productName, img, content, description, price, type, id }) {
     const { cantidad, incrementar, decrementar, resetear } = useCounter();
-    const { agregarProducto } = useGlobalShopping();
+    const { guardarProducto } = useGlobalShopping();
+    const dispatch = useDispatch();
 
     const handleClickComprar = () => {
         if (cantidad > 0) {
-            agregarProducto({
+            guardarProducto({
                 cantidad: cantidad,
                 productName: productName,
                 content: content,
@@ -21,6 +25,18 @@ function ProductoCard({ productName, img, content, description, price, type, id 
                 type: type,
                 id: id,
             });
+            // redux ----
+            dispatch(
+                saveProduct({
+                    cantidad: cantidad,
+                    productName: productName,
+                    content: content,
+                    description: description,
+                    price: price,
+                    type: type,
+                    id: id,
+                })
+            );
             resetear();
         }
     };
